@@ -11,6 +11,17 @@ import static org.junit.Assert.*
 
 
 public class AppTest{
+  @org.junit.Before
+    public void setUp() throws Exception {
+        //01.测试Compare方法
+       //02.测试IsTonghuashun方法, 参数列表中参数必须是按照升序排列的
+       
+    }
+
+    @org.junit.After
+    public void tearDown() throws Exception {
+        System.out.println("test finished!!!!");
+    }
     @org.junit.Test
     public void compare(){
         ArrayList<Pai> ceshi1 = new ArrayList<>();
@@ -51,5 +62,11 @@ public class AppTest{
         String ceshiresult3 = Compare.compare(black,white);
         assertEquals("Black wins",ceshiresult3 + ":wins");
 
+    }
+ @org.junit.Test
+    public void isTonghuashun() {
+        ArrayList<Pai> test1 = new ArrayList<>();
+        Collections.addAll(test1, new Pai(3, 4), new Pai(3, 5), new Pai(3, 6), new Pai(3, 7), new Pai(3, 8));
+        assertEquals(true,Compare.IsTonghuashun(test1));
     }
 }
